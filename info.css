@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -111,4 +112,59 @@ footer {
     }
 }
 
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
 
+    .card {
+        width: calc(100% - 30px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        height: 40vh;
+    }
+
+    h1 {
+        font-size: 2em;
+        padding: 10px;
+    }
+
+    .card-container {
+        padding: 10px;
+    }
+
+    .card {
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    .card h2 {
+        font-size: 1.3em;
+    }
+
+    .card p {
+        font-size: 0.9em;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .card h2 {
+        font-size: 1.2em;
+    }
+
+    .card p {
+        font-size: 0.85em;
+    }
+}
