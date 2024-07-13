@@ -173,3 +173,57 @@ body {
     .future {
       color: gray;
     }
+
+    .info_page a {
+        text-decoration: none;
+        color: #007BFF;
+        font-size: 14px; 
+      }
+      
+      .info_page a:hover {
+        color: #0056b3; 
+        text-decoration: underline; 
+      }
+      
+      .info_page a i {
+        margin-right: 5px; 
+      }
+      
+      #pause-button {
+        padding: 1em 2em;
+        font-size: 1em;
+        border: none;
+        background: #28a745;
+        color: white;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.1s ease, box-shadow 0.2s ease;
+        font-weight: 700;
+        margin-left: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+      }
+      
+      #pause-button:hover {
+        background: #218838;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+        transform: translateY(-2px); 
+      }
+      
+      #pause-button:active {
+        transform: scale(0.98); 
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2); 
+      }
+      
+      @keyframes move {
+        0% {
+          transform: translateY(0) translateX(0) rotate(0deg);
+        }
+        100% {
+          transform: translateY(-100vh) translateX(100vw) rotate(360deg);
+        }
+      }
+      
+      * {
+        transition: all 0.2s ease-in-out;
+      }
+    
