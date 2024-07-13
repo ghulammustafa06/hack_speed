@@ -1,0 +1,53 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* background-image: url('bg_image_ty.jpg'); */
+    /* background-size: cover; */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2.5em;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    width: 90%;
+  }
+  
+  header {
+    margin-bottom: 2em;
+  }
+  
+  h1 {
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2em;
+    flex-wrap: wrap;
+  }
+  
+  .stat {
+    text-align: center;
+    flex: 1;
+    min-width: 100px;
+    margin: 0.5em;
+    padding: 1em;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
