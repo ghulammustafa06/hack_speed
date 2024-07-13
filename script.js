@@ -49,3 +49,53 @@ document.addEventListener('DOMContentLoaded', () => {
       startTypingTest();
     }
   });
+
+  pauseButton.addEventListener('click', () => {
+    if (isPaused) {
+      resumeTest();
+    } else {
+      pauseTest();
+    }
+  });
+
+  typingArea.addEventListener('input', () => {
+    if (!isPaused) {
+      updateStats();
+      highlightErrors();
+    }
+  });
+
+  typingArea.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      if (typingArea.value.trim() === promptText.textContent.trim()) {
+        nextPrompt();
+      }
+    }
+  });
+
+  function startTypingTest() {
+    currentPromptIndex = 0;
+    elapsedTime = 0;
+    isPaused = false;
+    setNextPrompt();
+    typingArea.value = "";
+    typingArea.disabled = false;
+    typingArea.focus();
+    startTime = new Date().getTime();
+    timerInterval = setInterval(updateTimer, 1000);
+    pauseButton.textContent = "Pause";
+  }
+
+  function resetTypingTest() {
+    clearInterval(timerInterval);
+    timeDisplay.textContent = formatTime(testDuration);
+    wpmDisplay.textContent = "0";
+    cpmDisplay.textContent = "0";
+    accuracyDisplay.textContent = "0";
+    promptText.textContent = "Press 'Start Test' to begin...";
+    typingArea.value = "";
+    typingArea.disabled = true;
+    pauseButton.style.display = "none";
+    isPaused = false;
+  }
