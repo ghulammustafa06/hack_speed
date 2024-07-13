@@ -99,3 +99,52 @@ document.addEventListener('DOMContentLoaded', () => {
     pauseButton.style.display = "none";
     isPaused = false;
   }
+
+  function pauseTest() {
+    clearInterval(timerInterval);
+    typingArea.disabled = true;
+    isPaused = true;
+    pauseButton.textContent = "Resume";
+  }
+
+  function resumeTest() {
+    startTime = new Date().getTime() - elapsedTime * 1000;
+    timerInterval = setInterval(updateTimer, 1000);
+    typingArea.disabled = false;
+    typingArea.focus();
+    isPaused = false;
+    pauseButton.textContent = "Pause";
+  }
+
+  function updateTimer() {
+    elapsedTime = Math.floor((new Date().getTime() - startTime) / 1000);
+    const remainingTime = Math.max(0, testDuration - elapsedTime);
+    timeDisplay.textContent = formatTime(remainingTime);
+
+    if (remainingTime === 0) {
+      clearInterval(timerInterval);
+      typingArea.disabled = true;
+      startButton.textContent = "Start Test";
+      pauseButton.style.display = "none";
+    }
+  }
+
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+  }
+
+  function updateStats() {
+    const typedText = typingArea.value;
+    const wordsTyped = typedText.split(/\s+/).filter(word => word.length > 0).length;
+    const charsTyped = typedText.length;
+    
+    const wpm = (wordsTyped / elapsedTime) * 60;
+    const cpm = (charsTyped / elapsedTime) * 60;
+    const accuracy = calculateAccuracy(promptText.textContent, typedText);
+    
+    wpmDisplay.textContent = Math.round(wpm);
+    cpmDisplay.textContent = Math.round(cpm);
+    accuracyDisplay.textContent = Math.round(accuracy);
+  }
