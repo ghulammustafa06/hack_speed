@@ -148,3 +148,45 @@ document.addEventListener('DOMContentLoaded', () => {
     cpmDisplay.textContent = Math.round(cpm);
     accuracyDisplay.textContent = Math.round(accuracy);
   }
+
+  function calculateAccuracy(sampleText, typedText) {
+    let correctChars = 0;
+    for (let i = 0; i < typedText.length; i++) {
+      if (sampleText[i] === typedText[i]) {
+        correctChars++;
+      }
+    }
+    return (correctChars / Math.max(sampleText.length, typedText.length)) * 100;
+  }
+
+  function highlightErrors() {
+    const sampleText = promptText.textContent;
+    const typedText = typingArea.value;
+    let highlightedText = '';
+
+    for (let i = 0; i < sampleText.length; i++) {
+      if (i >= typedText.length) {
+        highlightedText += `<span class="future">${sampleText[i]}</span>`;
+      } else if (sampleText[i] === typedText[i]) {
+        highlightedText += `<span class="correct">${sampleText[i]}</span>`;
+      } else {
+        highlightedText += `<span class="incorrect">${sampleText[i]}</span>`;
+      }
+    }
+
+    promptText.innerHTML = highlightedText;
+  }
+
+  function setNextPrompt() {
+    promptText.textContent = prompts[currentPromptIndex];
+    highlightErrors();
+  }
+
+  function nextPrompt() {
+    currentPromptIndex = (currentPromptIndex + 1) % prompts.length;
+    setNextPrompt();
+    typingArea.value = "";
+  }
+
+  resetTypingTest();
+});
