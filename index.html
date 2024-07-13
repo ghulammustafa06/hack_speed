@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Speed Test</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="background-animation">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="container">
+    <header>
+      <h1>Test Your Typing Skills</h1>
+      <p class="info_page"><a href="info.html"><i class="fas fa-info-circle"></i> More Info</a></p>
+    </header>
+    <div class="stats">
+      <div class="stat">
+        <span id="time">0</span>
+        <p>seconds</p>
+      </div>
+      <div class="stat">
+        <span id="wpm">0</span>
+        <p>words/min</p>
+      </div>
+      <div class="stat">
+        <span id="cpm">0</span>
+        <p>chars/min</p>
+      </div>
+      <div class="stat">
+        <span id="accuracy">0</span>
+        <p>% accuracy</p>
+      </div>
+    </div>
+    <div class="typing-area">
+      <p id="prompt-text">Start typing to begin the test...</p>
+      <textarea id="typing-area" rows="3" placeholder="Type here..."></textarea>
+    </div>
+    <button id="start-button">Start Test</button>
+    <button id="pause-button" style="display: none;">Pause</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
