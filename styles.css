@@ -10,9 +10,9 @@ body {
     /* background-size: cover; */
     position: relative;
     overflow: hidden;
-  }
-  
-  .container {
+}
+
+.container {
     text-align: center;
     background: rgba(255, 255, 255, 0.9);
     padding: 2.5em;
@@ -22,26 +22,26 @@ body {
     z-index: 2;
     max-width: 600px;
     width: 90%;
-  }
-  
-  header {
+}
+
+header {
     margin-bottom: 2em;
-  }
-  
-  h1 {
+}
+
+h1 {
     color: #333;
     font-weight: 700;
     margin-bottom: 0.5em;
-  }
-  
-  .stats {
+}
+
+.stats {
     display: flex;
     justify-content: space-around;
     margin-bottom: 2em;
     flex-wrap: wrap;
-  }
-  
-  .stat {
+}
+
+.stat {
     text-align: center;
     flex: 1;
     min-width: 100px;
@@ -50,34 +50,34 @@ body {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+}
 
-  .stat span {
+.stat span {
     font-size: 1.5em;
     font-weight: 700;
     color: #007BFF;
-  }
-  
-  .stat p {
+}
+
+.stat p {
     margin: 0.5em 0 0;
     font-size: 0.9em;
     color: #666;
-  }
-  
-  .typing-area {
+}
+
+.typing-area {
     margin-bottom: 2em;
-  }
-  
-  #prompt-text {
+}
+
+#prompt-text {
     font-size: 1.2em;
     margin-bottom: 1em;
     background: #f7f7f7;
     padding: 1em;
     border-radius: 10px;
     color: #333;
-  }
-  
-  #typing-area {
+}
+
+#typing-area {
     width: 100%;
     padding: 1em;
     font-size: 1em;
@@ -85,14 +85,14 @@ body {
     border-radius: 10px;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease;
-  }
-  
-  #typing-area:focus {
+}
+
+#typing-area:focus {
     outline: none;
     border-color: #007BFF;
-  }
-  
-  #start-button {
+}
+
+#start-button {
     padding: 1em 2em;
     font-size: 1em;
     border: none;
@@ -102,17 +102,17 @@ body {
     cursor: pointer;
     transition: background 0.3s ease, transform 0.1s ease;
     font-weight: 700;
-  }
-  
-  #start-button:hover {
-    background: #0056b3;
-  }
-  
-  #start-button:active {
-    transform: scale(0.98);
-  }
+}
 
-  .background-animation {
+#start-button:hover {
+    background: #0056b3;
+}
+
+#start-button:active {
+    transform: scale(0.98);
+}
+
+.background-animation {
     position: fixed;
     top: 0;
     left: 0;
@@ -120,110 +120,171 @@ body {
     bottom: 0;
     z-index: 1;
     overflow: hidden;
-  }
-  
-  .background-animation div {
+}
+
+.background-animation div {
     position: absolute;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     animation: move 15s linear infinite;
-  }
-  
-  .background-animation div:nth-child(1) {
+}
+
+.background-animation div:nth-child(1) {
     width: 80px;
     height: 80px;
     top: 20%;
     left: 30%;
     animation-duration: 17s;
-  }
-  
-  .background-animation div:nth-child(2) {
+}
+
+.background-animation div:nth-child(2) {
     width: 50px;
     height: 50px;
     top: 70%;
     left: 60%;
     animation-duration: 13s;
-  }
-  
-  .background-animation div:nth-child(3) {
+}
+
+.background-animation div:nth-child(3) {
     width: 100px;
     height: 100px;
     top: 50%;
     left: 10%;
     animation-duration: 19s;
-  }
-  
-  .background-animation div:nth-child(4) {
+}
+
+.background-animation div:nth-child(4) {
     width: 60px;
     height: 60px;
     top: 30%;
     left: 80%;
     animation-duration: 22s;
-  }
-  
-  .correct {
-      color: green;
-    }
-    
-    .incorrect {
-      color: red;
-      text-decoration: underline;
-    }
-    
-    .future {
-      color: gray;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+    text-decoration: underline;
+}
+
+.future {
+    color: gray;
+}
+
+.info_page a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 14px;
+}
+
+.info_page a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.info_page a i {
+    margin-right: 5px;
+}
+
+#pause-button {
+    padding: 1em 2em;
+    font-size: 1em;
+    border: none;
+    background: #28a745;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    font-weight: 700;
+    margin-left: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#pause-button:hover {
+    background: #218838;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+#pause-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
     }
 
-    .info_page a {
-        text-decoration: none;
-        color: #007BFF;
-        font-size: 14px; 
-      }
-      
-      .info_page a:hover {
-        color: #0056b3; 
-        text-decoration: underline; 
-      }
-      
-      .info_page a i {
-        margin-right: 5px; 
-      }
-      
-      #pause-button {
-        padding: 1em 2em;
+    100% {
+        transform: translateY(-100vh) translateX(100vw) rotate(360deg);
+    }
+}
+
+* {
+    transition: all 0.2s ease-in-out;
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 1.5em;
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+
+    .stat {
+        margin: 0.3em 0;
+        padding: 0.8em;
+    }
+
+    .stat span {
+        font-size: 1.2em;
+    }
+
+    .stat p {
+        font-size: 0.8em;
+    }
+
+    #prompt-text {
         font-size: 1em;
-        border: none;
-        background: #28a745;
-        color: white;
-        border-radius: 25px;
-        cursor: pointer;
-        transition: background 0.3s ease, transform 0.1s ease, box-shadow 0.2s ease;
-        font-weight: 700;
-        margin-left: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
-      }
-      
-      #pause-button:hover {
-        background: #218838;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
-        transform: translateY(-2px); 
-      }
-      
-      #pause-button:active {
-        transform: scale(0.98); 
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2); 
-      }
-      
-      @keyframes move {
-        0% {
-          transform: translateY(0) translateX(0) rotate(0deg);
-        }
-        100% {
-          transform: translateY(-100vh) translateX(100vw) rotate(360deg);
-        }
-      }
-      
-      * {
-        transition: all 0.2s ease-in-out;
-      }
-    
+        padding: 0.8em;
+    }
+
+    #typing-area {
+        padding: 0.5em;
+    }
+
+    #start-button,
+    #pause-button {
+        padding: 0.8em 1.5em;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 1em;
+    }
+
+    h1 {
+        font-size: 1.3em;
+    }
+
+    .stat span {
+        font-size: 1.1em;
+    }
+
+    .stat p {
+        font-size: 0.7em;
+    }
