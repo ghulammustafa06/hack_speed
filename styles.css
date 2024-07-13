@@ -111,3 +111,65 @@ body {
   #start-button:active {
     transform: scale(0.98);
   }
+
+  .background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .background-animation div {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: move 15s linear infinite;
+  }
+  
+  .background-animation div:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: 30%;
+    animation-duration: 17s;
+  }
+  
+  .background-animation div:nth-child(2) {
+    width: 50px;
+    height: 50px;
+    top: 70%;
+    left: 60%;
+    animation-duration: 13s;
+  }
+  
+  .background-animation div:nth-child(3) {
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 10%;
+    animation-duration: 19s;
+  }
+  
+  .background-animation div:nth-child(4) {
+    width: 60px;
+    height: 60px;
+    top: 30%;
+    left: 80%;
+    animation-duration: 22s;
+  }
+  
+  .correct {
+      color: green;
+    }
+    
+    .incorrect {
+      color: red;
+      text-decoration: underline;
+    }
+    
+    .future {
+      color: gray;
+    }
